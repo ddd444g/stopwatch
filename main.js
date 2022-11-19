@@ -15,6 +15,12 @@ $(function() {
     // ストップ復活
     $('#stop').prop('disabled', false);
     
+    // ここを追加しました。
+    // リセット封印
+    $('#reset').prop('disabled', true);
+    // ここまで追加しました
+    
+    
     
     let startMs = Date.now();
     // 開始時間から経過時間をひく
@@ -32,8 +38,8 @@ $(function() {
       const s = Math.floor(carrentMs / 1000) % 60;
       // 分
       const m = Math.floor(carrentMs / 1000 / 60) % 60;
-      
-      const h = Math.floor(carrentMs / 1000 / 60　/60) % 60;
+      // 時間
+      const h = Math.floor(carrentMs / 1000 / 60 /60) % 60;
       
       time.textContent = `${h}:${m}:${s}.${ms}`;
     }, 10);
